@@ -1,0 +1,42 @@
+@use "../utils/variables" as var;
+.dark body,
+.dark header,
+.dark main,
+.dark section{
+    background-color: var.$dark-color !important;
+}
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark a{
+    color: var.$white-color;
+}
+.dark .header__btn{
+    box-shadow: 0px 0px 15px 5px var.$primary-color;
+}
+.dark .header__right,
+.dark .work__bottom__card,
+.dark .dream__right{
+    box-shadow: 0px 0px 15px 5px var.$white-color;
+}
+.dark .energy__card__title{
+    color: var.$primary-color
+}
+.dark .dream__h3{
+    color: var.$footer-bgc;
+}
+.dark .dream__h4{
+    color: var.$primary-color;
+}
+.dark .support__row__card{
+    box-shadow: 0px 0px 15px 5px var.$white-color;
+}
+.dark .energy__card{
+    max-width: 300px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 5px var.$white-color;
+}

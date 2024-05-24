@@ -1,0 +1,26 @@
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%flex-mobile-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+%grid-2fr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+%grid-3fr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+%grid-4fr {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

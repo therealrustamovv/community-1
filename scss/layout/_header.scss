@@ -1,0 +1,155 @@
+@use "../utils/variables" as var;
+
+#navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 84px;
+  background-color: var.$white-color;
+  z-index: 100;
+  transition: 0.5s;
+  .nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      @media (max-width: 830px) {
+        display: none;
+      }
+      a {
+        position: relative;
+        display: block;
+        color: #394149;
+        font-family: var.$secondary-font;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: capitalize;
+      }
+      a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var.$primary-color;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all 0.6s;
+      }
+      a:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var.$primary-color;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: all 0.6s;
+      }
+      a:hover {
+        color: var.$primary-color;
+      }
+      a:hover:before,
+      a:hover:after {
+        transform: scaleX(1.01);
+      }
+      .nav-clone {
+        color: var.$primary-color;
+        font-family: var.$secondary-font;
+        font-size: 16px;
+        line-height: 106.5%;
+        padding: 17.5px 32px;
+        background-color: rgba(245, 138, 7, 0.1);
+        border-radius: 31px;
+        transition: 0.5s;
+      }
+      .nav-clone:hover {
+        color: var.$white-color;
+        background-color: var.$primary-color;
+      }
+      .nav-clone:after,
+      .nav-clone:before {
+        display: none;
+      }
+      .active-nav {
+        color: var.$primary-color
+      }
+    }
+    &__res {
+      display: none;
+      button {
+        background-color: transparent;
+      }
+      @media (max-width: 830px) {
+        display: flex;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+#navbar-responsive {
+  position: fixed;
+  top: -100%;
+  bottom: 0;
+  left: 0;
+  height: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 45px;
+  padding-left: 40px;
+  align-items: start;
+  background-color: var.$white-color;
+  transition: 0.5s;
+  z-index: 100;
+  ul {
+    @media (min-width: 500px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .logo {
+    padding-right: 70px;
+    margin-bottom: 30px;
+  }
+  li {
+    margin-bottom: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+.close-mark {
+  position: absolute;
+  right: 20px;
+  top: 28px;
+}
+
+#navbar-close {
+  width: 31px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var.$dark-color;
+  border-radius: 50px;
+  img {
+    width: 100%;
+  }
+}
+
+#navbar.navbar-shrink {
+  height: 60px;
+  box-shadow: 0 0 20px 1px var.$dark-color;
+  background-color: #ddd;
+}
